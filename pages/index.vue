@@ -1,29 +1,45 @@
 <template>
-  <section class="container">
-    <div>
-      <h2>
-        Write to Firestore.
-      </h2>
-      <div>
-        <button @click="writeToFirestore" :disabled="writeSuccessful">
-          <span v-if="!writeSuccessful">Write now</span>
-          <span v-else>Successful!</span>
-        </button>
+  <div class="container text-center">
+    <div class="row mt-5">
+      <div class="col-md-6 offset-md-3">
+        <div>
+          <h2>
+            Write to Firestore.
+          </h2>
+          <div>
+            <button
+              @click="writeToFirestore"
+              :disabled="writeSuccessful"
+              class="btn btn-warning"
+            >
+              <span v-if="!writeSuccessful">Write now</span>
+              <span v-else>Successful!</span>
+            </button>
+          </div>
+        </div>
       </div>
     </div>
-    <div>
-      <h2>
-        Read from Firestore.
-      </h2>
-      <div>
-        <button @click="readFromFirestore" :disabled="readSuccessful">
-          <span v-if="!readSuccessful">Read now</span>
-          <span v-else>Successful!</span>
-        </button>
-        <p>{{ text }}</p>
+    <div class="row mt-5">
+      <div class="col-md-6 offset-md-3">
+        <div>
+          <h2>
+            Read from Firestore.
+          </h2>
+          <div>
+            <button
+              @click="readFromFirestore"
+              :disabled="readSuccessful"
+              class="btn btn-primary"
+            >
+              <span v-if="!readSuccessful">Read now</span>
+              <span v-else>Successful!</span>
+            </button>
+            <p>{{ text }}</p>
+          </div>
+        </div>
       </div>
     </div>
-  </section>
+  </div>
 </template>
 
 <script>
@@ -78,13 +94,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-.container {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-</style>
