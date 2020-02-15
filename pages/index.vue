@@ -78,19 +78,19 @@ export default {
         console.error(e)
       }
       this.writeSuccessful = true
+    },
+    async readFromFirestore() {
+      const ref = fireDb.collection('test').doc('test')
+      let snap
+      try {
+        snap = await ref.get()
+      } catch (e) {
+        // TODO: error handling
+        console.error(e)
+      }
+      this.text = snap.data().text
+      this.readSuccessful = true
     }
-  },
-  async readFromFirestore() {
-    const ref = fireDb.collection('test').doc('test')
-    let snap
-    try {
-      snap = await ref.get()
-    } catch (e) {
-      // TODO: error handling
-      console.error(e)
-    }
-    this.text = snap.data().text
-    this.readSuccessful = true
   }
 }
 </script>
