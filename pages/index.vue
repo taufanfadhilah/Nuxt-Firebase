@@ -1,5 +1,8 @@
 <template>
   <div class="container text-center">
+    <nuxt-link to="crud">
+      <h4>Goto CRUD</h4>
+    </nuxt-link>
     <div class="row mt-5">
       <div class="col-md-6 offset-md-3">
         <div>
